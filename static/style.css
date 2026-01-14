@@ -1,40 +1,21 @@
 body {
-    font-family: Arial, sans-serif;
-    background: #f4f6f8;
+    background-color: #f8f9fb;
+    font-family: "Inter", "Segoe UI", sans-serif;
 }
 
-.container {
-    width: 500px;
-    margin: 40px auto;
-    background: white;
-    padding: 20px;
-    border-radius: 6px;
+.navbar {
+    background: #ffffff;
 }
 
-input, textarea {
-    width: 100%;
-    margin: 8px 0;
-    padding: 8px;
+.card {
+    border-radius: 14px;
 }
 
-button {
-    width: 100%;
-    padding: 10px;
-    background: #2563eb;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+.badge {
+    font-size: 0.85rem;
+    padding: 6px 10px;
 }
 
-.result {
-    margin-top: 20px;
-}
-
-.matched {
-    color: green;
-}
-
-.missing {
-    color: red;
+.progress {
+    background-color: #e9ecef;
 }
