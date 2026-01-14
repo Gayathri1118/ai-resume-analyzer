@@ -1,12 +1,10 @@
-import spacy
 from skills import SKILLS, SKILL_ALIASES
+from resume_parser import clean_text, extract_skills, extract_phrases
 
-nlp = spacy.load("en_core_web_sm")
+IMPORTANT_SKILLS = {"python", "machine learning", "nlp"}
 
 
 def analyze_job_description(jd_text):
-    from resume_parser import clean_text, extract_skills, extract_phrases
-
     clean = clean_text(jd_text)
     tokens = extract_skills(clean, SKILLS)
     phrases = extract_phrases(clean, SKILLS)
@@ -22,9 +20,6 @@ def normalize_skills(skills):
                 normalized.add(main)
 
     return normalized
-
-
-IMPORTANT_SKILLS = {"python", "machine learning", "nlp"}
 
 
 def match_skills(resume_skills, jd_skills):
@@ -47,6 +42,6 @@ def match_skills(resume_skills, jd_skills):
 
     return {
         "score": final_score,
-        "matched": list(matched),
-        "missing": list(missing)
+        "matched": sorted(matched),
+        "missing": sorted(missing)
     }
